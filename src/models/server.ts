@@ -2,11 +2,11 @@ import express,{ Application }  from 'express';
 
 class Server {
     private app: Application;
-    private port: number;
+    private port: string;
 
     constructor() {
         this.app = express();
-        this.port = 3001;
+        this.port = process.env.PORT || '3001';
         this.listen();
     }
 
