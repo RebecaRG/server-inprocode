@@ -1,3 +1,3 @@
-const nombre: string = "Pepito Pérez García";
+import Server from "./models/server";
 
-console.log(nombre);
+const server = new Server();
