@@ -1,43 +1,82 @@
 import {Request, Response} from 'express';
+import Producto from '../models/producto';
 
-export const getProducts = (req: Request, res: Response) => {
+export const getProducts = async(req: Request, res: Response) => {
+    const listProducts = await Producto.findAll();
 
-    res.json({
-        msg: 'get products'
-    })
+    res.json(listProducts)
 }
 
-export const getProduct = (req: Request, res: Response) => { 
+export const getProduct = async (req: Request, res: Response) => { 
     const { id } = req.params;
-    res.json({
-        msg: 'get product',
-        id
-    })
+    const product = await Producto.findByPk(id);
+
+    if(product) {
+        res.json(product)
+    } else {
+        res.status(404).json({
+            msg: `No existe el producto con el id ${id}`
+    }) 
+    }
 }
 
-export const deleteProduct = (req: Request, res: Response) => { 
+export const deleteProduct = async (req: Request, res: Response) => { 
     const { id } = req.params;
-    res.json({
-        msg: 'delete product',
-        id
-    })
+    const product = await Producto.findByPk(id);
+
+    if(product) {
+        await product.destroy();
+        res.status(404).json({
+            msg: 'El producto ha sido eliminado'
+    }) 
+    } else {
+        res.status(404).json({
+            msg: `No existe el producto con el id ${id}`
+    }) 
+    }
 }
 
-export const postProduct = (req: Request, res: Response) => { 
+export const postProduct = async (req: Request, res: Response) => { 
     const { body } = req;
-    res.json({
-        msg: 'post product',
-        body
-    })
+
+    try{
+        await Producto.create(body);
+
+        res.json({
+            msg: 'El producto ha sido creado',
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            msg: 'Error al crear el producto',
+        })
+    }
 }
 
-export const updateProduct = (req: Request, res: Response) => { 
+export const updateProduct = async (req: Request, res: Response) => { 
     const { body } = req;
     const { id } = req.params;
-    res.json({
-        msg: 'update product',
-        id,
-        body
-        
-    })
+
+    try{
+        const product = await Producto.findByPk(id);
+        if(product) {
+            await product.update(body);
+            res.json({
+                msg: 'El producto se ha sido actualizado'
+            })
+        }else {
+            res.status(404).json({
+                msg: `No existe el producto con el id ${id}`
+            }) 
+        }
+
+    }catch (error) {
+        console.log(error);
+        res.json({
+            msg: 'Error al actualizar el producto',
+        })
+    }
+
+
+
 }

@@ -3,6 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const sequelize = new sequelize_1.Sequelize('juegos_de_mesa', 'root', 'admin123', {
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    dialectOptions: {
+        mode: ''
+    }
 });
 exports.default = sequelize;
