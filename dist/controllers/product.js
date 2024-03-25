@@ -37,7 +37,7 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     const product = yield producto_1.default.findByPk(id);
     if (product) {
         yield product.destroy();
-        res.status(404).json({
+        res.json({
             msg: 'El producto ha sido eliminado'
         });
     }
