@@ -37,7 +37,7 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     const product = yield producto_1.default.findByPk(id);
     if (product) {
         yield product.destroy();
-        res.json({
+        res.status(404).json({
             msg: 'El producto ha sido eliminado'
         });
     }
@@ -72,7 +72,7 @@ const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         if (product) {
             yield product.update(body);
             res.json({
-                msg: 'El producto se ha sido actualizado'
+                msg: 'El producto ha sido actualizado'
             });
         }
         else {
