@@ -1,6 +1,7 @@
 import express,{ Application, Request, Response  }  from 'express';
 import cors from 'cors';
 import routesProduct from '../routes/product';
+import routesTiendas from '../routes/tiendas';
 import db from '../db/connection';
 
 class Server {
@@ -28,7 +29,8 @@ class Server {
                 msg: 'API working!'
             })
         })
-        this.app.use('/api/productos', routesProduct)
+        this.app.use('/api/productos', routesProduct);
+        this.app.use('/api/tiendas', routesTiendas);
     }
 
     midlewares() {
