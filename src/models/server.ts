@@ -2,6 +2,10 @@ import express,{ Application, Request, Response  }  from 'express';
 import cors from 'cors';
 import routesProduct from '../routes/product';
 import routesTiendas from '../routes/tiendas';
+import routesCategorias from '../routes/categorias';
+import routesBares from '../routes/bares';
+import routesBibliotecas from '../routes/bibliotecas';
+import routesAsociaciones from '../routes/asociaciones';
 import db from '../db/connection';
 
 class Server {
@@ -31,6 +35,10 @@ class Server {
         })
         this.app.use('/api/productos', routesProduct);
         this.app.use('/api/tiendas', routesTiendas);
+        this.app.use('/api/categorias', routesCategorias);
+        this.app.use('/api/bares', routesBares);
+        this.app.use('/api/bibliotecas', routesBibliotecas);
+        this.app.use('/api/asociaciones', routesAsociaciones);
     }
 
     midlewares() {

@@ -16,6 +16,10 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const product_1 = __importDefault(require("../routes/product"));
 const tiendas_1 = __importDefault(require("../routes/tiendas"));
+const categorias_1 = __importDefault(require("../routes/categorias"));
+const bares_1 = __importDefault(require("../routes/bares"));
+const bibliotecas_1 = __importDefault(require("../routes/bibliotecas"));
+const asociaciones_1 = __importDefault(require("../routes/asociaciones"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
     constructor() {
@@ -39,6 +43,10 @@ class Server {
         });
         this.app.use('/api/productos', product_1.default);
         this.app.use('/api/tiendas', tiendas_1.default);
+        this.app.use('/api/categorias', categorias_1.default);
+        this.app.use('/api/bares', bares_1.default);
+        this.app.use('/api/bibliotecas', bibliotecas_1.default);
+        this.app.use('/api/asociaciones', asociaciones_1.default);
     }
     midlewares() {
         this.app.use(express_1.default.json());

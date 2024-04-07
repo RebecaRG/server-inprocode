@@ -8,14 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getTiendas = void 0;
-const tienda_1 = __importDefault(require("../models/tienda"));
-const getTiendas = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const listTiendas = yield tienda_1.default.findAll();
-    res.json(listTiendas);
+exports.getCategorias = void 0;
+const getCategorias = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const categorias = ['tiendas', 'bares', 'bibliotecas', 'asociaciones'];
+    res.json(categorias);
 });
-exports.getTiendas = getTiendas;
+exports.getCategorias = getCategorias;
