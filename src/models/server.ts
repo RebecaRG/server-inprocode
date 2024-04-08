@@ -6,6 +6,7 @@ import routesCategorias from '../routes/categorias';
 import routesBares from '../routes/bares';
 import routesBibliotecas from '../routes/bibliotecas';
 import routesAsociaciones from '../routes/asociaciones';
+import routesEventos from '../routes/eventos';
 import db from '../db/connection';
 
 class Server {
@@ -39,6 +40,7 @@ class Server {
         this.app.use('/api/bares', routesBares);
         this.app.use('/api/bibliotecas', routesBibliotecas);
         this.app.use('/api/asociaciones', routesAsociaciones);
+        this.app.use('/api/eventos', routesEventos)
     }
 
     midlewares() {

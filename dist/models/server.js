@@ -20,6 +20,7 @@ const categorias_1 = __importDefault(require("../routes/categorias"));
 const bares_1 = __importDefault(require("../routes/bares"));
 const bibliotecas_1 = __importDefault(require("../routes/bibliotecas"));
 const asociaciones_1 = __importDefault(require("../routes/asociaciones"));
+const eventos_1 = __importDefault(require("../routes/eventos"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
     constructor() {
@@ -47,6 +48,7 @@ class Server {
         this.app.use('/api/bares', bares_1.default);
         this.app.use('/api/bibliotecas', bibliotecas_1.default);
         this.app.use('/api/asociaciones', asociaciones_1.default);
+        this.app.use('/api/eventos', eventos_1.default);
     }
     midlewares() {
         this.app.use(express_1.default.json());
