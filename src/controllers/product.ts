@@ -26,7 +26,7 @@ export const deleteProduct = async (req: Request, res: Response) => {
 
     if(product) {
         await product.destroy();
-        res.status(404).json({
+        res.status(200).json({
             msg: 'El producto ha sido eliminado'
     }) 
     } else {
