@@ -15,11 +15,11 @@ const Tienda = db.define('Tienda', {
     },
     longitud: {
         type: DataTypes.DOUBLE
-    }, 
+    },
     direccion: {
         type: DataTypes.STRING
     },
-},{
+}, {
     createdAt: false,
     updatedAt: false
 });

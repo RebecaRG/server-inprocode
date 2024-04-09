@@ -24,12 +24,12 @@ const Evento = db.define('Evento', {
     allowNull: false,
   },
   descripcion: {
-    type: DataTypes.STRING, 
+    type: DataTypes.STRING,
   }
 }, {
-  
-  tableName: 'eventos', 
-  timestamps: false, 
+
+  tableName: 'eventos',
+  timestamps: false,
 });
 
 export default Evento;

@@ -15,12 +15,12 @@ const Biblioteca = db.define('Biblioteca', {
     },
     longitud: {
         type: DataTypes.DOUBLE
-    }, 
+    },
     direccion: {
         type: DataTypes.STRING
     },
-},{
-    tableName: 'bibliotecas', 
+}, {
+    tableName: 'bibliotecas',
     createdAt: false,
     updatedAt: false
 });

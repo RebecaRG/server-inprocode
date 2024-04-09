@@ -15,11 +15,11 @@ const Bar = db.define('Bar', {
     },
     longitud: {
         type: DataTypes.DOUBLE
-    }, 
+    },
     direccion: {
         type: DataTypes.STRING
     },
-},{
+}, {
     tableName: 'bares',
     createdAt: false,
     updatedAt: false

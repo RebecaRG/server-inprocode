@@ -12,7 +12,7 @@ const Producto = db.define('Producto', {
     },
     fecha_publicacion: {
         type: DataTypes.INTEGER
-    }, 
+    },
     editorial: {
         type: DataTypes.STRING
     },
@@ -34,7 +34,7 @@ const Producto = db.define('Producto', {
     edad_min: {
         type: DataTypes.INTEGER
     }
-},{
+}, {
     createdAt: false,
     updatedAt: false
 });

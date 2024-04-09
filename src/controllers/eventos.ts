@@ -7,24 +7,24 @@ export const getEventos = async (req: Request, res: Response) => {
     res.json(listaEventos);
 };
 
-export const getEvento = async (req: Request, res: Response) => { 
+export const getEvento = async (req: Request, res: Response) => {
     const { id } = req.params;
     const evento = await Evento.findByPk(id);
 
-    if(evento) {
+    if (evento) {
         res.json(evento);
     } else {
         res.status(404).json({
             msg: `No existe el evento con el id ${id}`
-        }); 
+        });
     }
 };
 
-export const deleteEvento = async (req: Request, res: Response) => { 
+export const deleteEvento = async (req: Request, res: Response) => {
     const { id } = req.params;
     const evento = await Evento.findByPk(id);
 
-    if(evento) {
+    if (evento) {
         await evento.destroy();
         res.json({
             msg: 'El evento ha sido eliminado'
@@ -36,7 +36,7 @@ export const deleteEvento = async (req: Request, res: Response) => {
     }
 };
 
-export const postEvento = async (req: Request, res: Response) => { 
+export const postEvento = async (req: Request, res: Response) => {
     const { body } = req;
 
     try {
@@ -54,13 +54,13 @@ export const postEvento = async (req: Request, res: Response) => {
     }
 };
 
-export const updateEvento = async (req: Request, res: Response) => { 
+export const updateEvento = async (req: Request, res: Response) => {
     const { body } = req;
     const { id } = req.params;
 
     try {
         const evento = await Evento.findByPk(id);
-        if(evento) {
+        if (evento) {
             await evento.update(body);
             res.json({
                 msg: 'El evento ha sido actualizado',

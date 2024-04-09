@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAsociaciones } from '../controllers/asociaciones'; 
+import { getAsociaciones } from '../controllers/asociaciones';
 
 const router = Router();
 

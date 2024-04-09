@@ -15,12 +15,12 @@ const Asociacion = db.define('Asociacion', {
     },
     longitud: {
         type: DataTypes.DOUBLE
-    }, 
+    },
     direccion: {
         type: DataTypes.STRING
     },
 }, {
-    tableName: 'asociaciones', 
+    tableName: 'asociaciones',
     createdAt: false,
     updatedAt: false
 });
