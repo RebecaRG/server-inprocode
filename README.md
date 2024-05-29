@@ -1,6 +1,6 @@
-# Backend Juegos de Mesa 🧩
+# Inprocode - Backend Juegos de Mesa 🧩
 
-Backend desarrollado con Express y Sequelize para la aplicación de juegos de mesa, complementando el frontend en `sprint-8`. Utiliza TypeScript y dotenv para una configuración eficiente y segura.
+Backend desarrollado con Express y Sequelize, que utiliza TypeScript y dotenv, para la web de inprocode basada en juegos de mesa, complementando el frontend en el repositorio `inprocode`.
 
 ## 🛠 Configuración Rápida
 
